@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'page/style.css' %}">
+    <title>Тестовое задание Николаев Данил</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Тестовое задание web-программист (Python)</h1>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section_main">
+            <div class="container">
+                <table class="table">
+                    <tr class="line">
+                        <th class="heading">Название</th>
+                        <th class="heading">Дата</th>
+                        <th class="heading">Количество</th>
+                        <th class="heading">Расстояние</th>
+                    </tr>
+                    {% for elem in spa_list %}
+                    <tr class="line">
+                         <td class="column">{{elem.name}}</td>
+                        <td class="column">{{elem.data}}</td>
+                        <td class="column">{{elem.count}}</td>
+                        <td class="column">{{elem.distance}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <form action="" class="form">
+                    <div class="label">
+                        <h2>Сортировка</h2>
+                    </div>
+                    <select name="" id="1" class="cut">
+                        <option value="name">Название</option>
+                        <option value="count">Количество</option>
+                        <option value="distance">Расстояние</option>
+                    </select>  
+                    <select name="" id="2" class="cut">
+                        <option name="orderby" value="equally">равно</option>
+                        <option name="orderby" value="contains">содержит</option>
+                        <option name="orderby" value="-name">больше</option>
+                        <option name="orderby" value="less">меньше</option>
+                    </select>  
+                    <input type="text" class="cut">
+                    <button class="btn">Сортировать</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
